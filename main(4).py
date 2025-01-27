@@ -24,13 +24,18 @@ for item in second_list:
         if t == item:
             count[item] +=1
 
+count.pop(None)
+
 #prints output of second list >>>>>> try to make this output better
 print(second_list)
 
 #ask's user to input name of one event by name
-search = str(input("Please type prorgam you want to search event for? > "))
+print('')
+search = str(input(" PLEASE INPUT THE PROGRAM NAME YOU WANT TO SEARCH FOR ?> "))
 
 #prints the name of the program and the number of events the program counted
 for keys,value in count.items():
     if search == keys:
-        print(f'Program You Searched for {keys} had {value} Events Logged')
+        print(f'Program {keys} had {value} Events Logged')
+
+
