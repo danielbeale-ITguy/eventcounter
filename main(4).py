@@ -1,4 +1,7 @@
 import csv
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 empty_list = []
 second_list = []
@@ -38,4 +41,23 @@ for keys,value in count.items():
     if search == keys:
         print(f'Program {keys} had {value} Events Logged')
 
+dansdict = count
+
+names = list(dansdict.keys())
+Age = list(dansdict.values())
+
+key_to_change = search
+index_to_chnage = names.index(key_to_change)
+
+plt.figure(figsize=(16,9))
+bars = plt.bar(names,Age, color='blue')
+bars[index_to_chnage].set_color('red')
+plt.ylabel('Events Over Time')
+plt.xticks(rotation = 90)
+plt.xticks(size=8)
+plt.ylim(0, 1000)
+# Save the plot to a file
+
+
+plt.savefig('plot.png')  # Saves the plot as a PNG file
 
